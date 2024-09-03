@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CompanyProfile } from "../../company";
 import { getCompanyProfile } from "../../api";
@@ -6,6 +6,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 import Tile from "../../Components/Tile/Tile";
 import Spinner from "../../Components/Spinner/Spinner";
+import TenKFinder from "../../Components/TenKFinder/TenKFinder";
 
 interface Props {}
 
@@ -28,10 +29,12 @@ const CompanyPage = (props: Props) => {
         <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
-            <Tile title="Company Name" subTitle={company.companyName}></Tile>
-            <Tile title="Price" subTitle={company.price.toString()}></Tile>
-            <Tile title="Sector" subTitle={company.sector}></Tile>
-            <Tile title="DFC" subTitle={company.dcf.toString()}></Tile>
+            <Tile title="Company Name" subTitle={company.companyName} />
+            <Tile title="Price" subTitle={"$" + company.price.toString()} />
+            <Tile title="DFC" subTitle={"$" + company.dcf.toString()} />
+            <Tile title="Sector" subTitle={company.sector} />
+            <TenKFinder ticker={company.symbol} />
+            {/*<CompFinder ticker={company.symbol} /> */}
             <p className="bg-white shadow rounded text-medium text-gray-900 p-3 mt-1 m-4">
               {company.description}
             </p>
