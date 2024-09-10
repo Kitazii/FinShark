@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace api.Models
 {
+    // Comment Models
     public class Comment
     {
         public int Id { get; set; }
