@@ -4,6 +4,8 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using api.Data;
+using api.Dtos.Stock;
+using api.Mappers;
 using api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -23,7 +25,8 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult GetStocks()
         {
-            List<Stock> stocks = _context.Stocks.ToList();
+            IEnumerable<StockDto> stocks = _context.Stocks.ToList()
+            .Select(s => s.ToStockDto());
 
             return Ok(stocks);
         }
@@ -38,7 +41,7 @@ namespace api.Controllers
                 return NotFound();
             }
 
-            return Ok(stock);
+            return Ok(stock.ToStockDto());
         }
     }
 }
