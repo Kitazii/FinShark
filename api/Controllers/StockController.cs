@@ -43,5 +43,16 @@ namespace api.Controllers
 
             return Ok(stock.ToStockDto());
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateStock([FromBody] CreateStockRequestDto stockDto)
+        {
+            Stock stockModel = stockDto.ToStockFromCreateDto();
+
+            _context.Stocks.Add(stockModel);
+            _context.SaveChanges();
+
+            return CreatedAtAction(nameof(GetStock), new { id = stockModel.Id }, stockModel.ToStockDto());
+        }
     }
 }
