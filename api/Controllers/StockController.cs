@@ -55,11 +55,11 @@ namespace api.Controllers
             return CreatedAtAction(nameof(GetStock), new { id = stockModel.Id }, stockModel.ToStockDto());
         }
 
-        [HttpPut]
-        [Route("{id}")]
+        [HttpPut("{id}")]
+        //[Route("{id}")] //same as declaring it in the put, use case is better when you have multiple vars
         public IActionResult UpdateStock([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
         {
-            Stock? stockModel = _context.Stocks.FirstOrDefault(u => u.Id == id);
+            Stock? stockModel = _context.Stocks.FirstOrDefault(s => s.Id == id);
 
             if (stockModel == null)
             {
@@ -70,6 +70,24 @@ namespace api.Controllers
             _context.SaveChanges();
 
             return Ok(stockModel.ToStockDto());
+        }
+
+        [HttpDelete("{id}")]
+        //[Route("{id}")]
+        public IActionResult DeleteStock([FromRoute] int id)
+        {
+            Stock? stockModel = _context.Stocks.FirstOrDefault(s => s.Id == id);
+
+            if (stockModel == null)
+            {
+                return NotFound();
+            }
+
+            _context.Stocks.Remove(stockModel);
+
+            _context.SaveChanges();
+
+            return NoContent();
         }
     }
 }
