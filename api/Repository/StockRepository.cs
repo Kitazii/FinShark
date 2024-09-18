@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Dtos.Stock;
 using api.Interfaces;
+using api.Mappers;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +20,47 @@ namespace api.Repository
         {
             _context = context;
         }
-        public Task<List<Stock>> GetStocksAsync()
+
+        public async Task<Stock> CreateStockAsync(Stock stockModel)
         {
-            return _context.Stocks.ToListAsync();
+            await _context.Stocks.AddAsync(stockModel);
+            await _context.SaveChangesAsync();
+            return stockModel;
+        }
+
+        public async Task<Stock?> DeleteStockAsync(int id)
+        {
+            Stock? stockModel = await _context.Stocks.FirstOrDefaultAsync(s => s.Id == id);
+
+            if (stockModel == null) return null;
+
+            _context.Stocks.Remove(stockModel);
+
+            await _context.SaveChangesAsync();
+            return stockModel;
+        }
+
+        public async Task<Stock?> GetStockAsync(int id)
+        {
+            return await _context.Stocks.FindAsync(id);
+        }
+
+        public async Task<List<Stock>> GetStocksAsync()
+        {
+            return await _context.Stocks.ToListAsync();
+        }
+
+        public async Task<Stock?> UpdateStockAsync(int id, UpdateStockRequestDto updateStockDto)
+        {
+            Stock? stockModel = await _context.Stocks.FirstOrDefaultAsync(s => s.Id == id);
+
+            if (stockModel == null) return null;
+
+            stockModel.UpdateFromDto(updateStockDto);
+
+            await _context.SaveChangesAsync();
+
+            return stockModel;
         }
     }
 }

@@ -17,12 +17,10 @@ namespace api.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
         private readonly IStockRepository _stockRepo;
-        public StockController(ApplicationDBContext context, IStockRepository stockRepo)
+        public StockController(IStockRepository stockRepo)
         {
             _stockRepo = stockRepo;
-            _context = context;
         }
 
         [HttpGet]
@@ -37,12 +35,9 @@ namespace api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetStock([FromRoute] int id)
         {
-            Stock? stock = await _context.Stocks.FindAsync(id);
+            Stock? stock = await _stockRepo.GetStockAsync(id);
 
-            if (stock == null)
-            {
-                return NotFound();
-            }
+            if (stock == null) return NotFound();
 
             return Ok(stock.ToStockDto());
         }
@@ -52,8 +47,7 @@ namespace api.Controllers
         {
             Stock stockModel = stockDto.ToStockFromCreateDto();
 
-            await _context.Stocks.AddAsync(stockModel);
-            await _context.SaveChangesAsync();
+            await _stockRepo.CreateStockAsync(stockModel);
 
             return CreatedAtAction(nameof(GetStock), new { id = stockModel.Id }, stockModel.ToStockDto());
         }
@@ -62,15 +56,9 @@ namespace api.Controllers
         //[Route("{id}")] //same as declaring it in the put, use case is better when you have multiple vars
         public async Task<IActionResult> UpdateStock([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
         {
-            Stock? stockModel = await _context.Stocks.FirstOrDefaultAsync(s => s.Id == id);
+            Stock? stockModel = await _stockRepo.UpdateStockAsync(id, updateDto);
 
-            if (stockModel == null)
-            {
-                return NotFound();
-            }
-            stockModel.UpdateFromDto(updateDto);
-
-            await _context.SaveChangesAsync();
+            if (stockModel == null) return NotFound();
 
             return Ok(stockModel.ToStockDto());
         }
@@ -79,16 +67,9 @@ namespace api.Controllers
         //[Route("{id}")]
         public async Task<IActionResult> DeleteStock([FromRoute] int id)
         {
-            Stock? stockModel = await _context.Stocks.FirstOrDefaultAsync(s => s.Id == id);
+            Stock? stockModel = await _stockRepo.DeleteStockAsync(id);
 
-            if (stockModel == null)
-            {
-                return NotFound();
-            }
-
-            _context.Stocks.Remove(stockModel);
-
-            await _context.SaveChangesAsync();
+            if (stockModel == null) return NotFound();
 
             return NoContent();
         }
