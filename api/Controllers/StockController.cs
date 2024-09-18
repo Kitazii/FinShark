@@ -18,10 +18,7 @@ namespace api.Controllers
     public class StockController : ControllerBase
     {
         private readonly IStockRepository _stockRepo;
-        public StockController(IStockRepository stockRepo)
-        {
-            _stockRepo = stockRepo;
-        }
+        public StockController(IStockRepository stockRepo) { _stockRepo = stockRepo; }
 
         [HttpGet]
         public async Task<IActionResult> GetStocks()
