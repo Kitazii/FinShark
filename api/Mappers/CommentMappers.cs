@@ -16,7 +16,8 @@ namespace api.Mappers
                 Id = commentModel.Id,
                 Title = commentModel.Title,
                 Content = commentModel.Content,
-                CreatedOn = commentModel.CreatedOn
+                CreatedOn = commentModel.CreatedOn,
+                StockId = commentModel.StockId
             };
         }
 
@@ -26,7 +27,8 @@ namespace api.Mappers
             {
                 Title = commentDto.Title,
                 Content = commentDto.Content,
-                CreatedOn = commentDto.CreatedOn
+                CreatedOn = commentDto.CreatedOn,
+                StockId = commentDto.StockId
             };
         }
         public static void UpdateFromDto(this Comment comment, UpdateCommentRequestDto updateDto)
@@ -34,6 +36,7 @@ namespace api.Mappers
             comment.Title = updateDto.Title;
             comment.Content = updateDto.Content;
             comment.CreatedOn = updateDto.CreatedOn;
+            comment.StockId = updateDto.StockId;
         }
     }
 }

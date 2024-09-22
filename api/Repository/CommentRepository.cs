@@ -8,6 +8,7 @@ using api.Interfaces;
 using api.Models;
 using api.Mappers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace api.Repository
 {
