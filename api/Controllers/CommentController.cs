@@ -16,8 +16,13 @@ namespace api.Controllers
     public class CommentController : ControllerBase
     {
         private readonly ICommentRepository _commentRepo;
+        private readonly IStockRepository _stockRepo;
 
-        public CommentController(ICommentRepository commentRepo) { _commentRepo = commentRepo; }
+        public CommentController(ICommentRepository commentRepo, IStockRepository stockRepo)
+        {
+            _commentRepo = commentRepo;
+            _stockRepo = stockRepo;
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetComments()
@@ -38,10 +43,13 @@ namespace api.Controllers
             return Ok(commentModel.ToCommentDto());
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateComment([FromBody] CreateCommentRequestDto commentDto)
+        [HttpPost("{stockId}")]
+        public async Task<IActionResult> CreateComment([FromRoute] int stockId, CreateCommentRequestDto commentDto)
         {
-            Comment? commentModel = commentDto.ToCommentFromCreateDto();
+            if (!await _stockRepo.StockExists(stockId))
+                return BadRequest("Stock does not exist");
+
+            Comment? commentModel = commentDto.ToCommentFromCreateDto(stockId);
 
             await _commentRepo.CreateCommentAsync(commentModel);
 
