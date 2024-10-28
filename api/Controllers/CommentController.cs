@@ -67,11 +67,18 @@ namespace api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            Comment? commentModel = await _commentRepo.UpdateCommentAsync(id, commentDto);
+            Comment? comment = await _commentRepo.UpdateCommentAsync(id, commentDto.ToCommentFromUpdateDto());
 
-            if (commentModel == null) return NotFound();
+            if (comment == null) return NotFound("Comment not found");
 
-            return Ok(commentModel.ToCommentDto());
+            return Ok(comment.ToCommentDto());
+
+            //other approach
+            //Comment? commentModel = await _commentRepo.UpdateCommentAsync(id, commentDto);
+
+            //if (commentModel == null) return NotFound();
+
+            //return Ok(commentModel.ToCommentDto());
         }
 
         [HttpDelete("{id:int}")]
@@ -85,5 +92,6 @@ namespace api.Controllers
 
             return NoContent();
         }
+
     }
 }

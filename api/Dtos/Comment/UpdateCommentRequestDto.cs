@@ -9,7 +9,7 @@ namespace api.Dtos.Comment
     public class UpdateCommentRequestDto
     {
         [Required]
-        [MinLength(5, ErrorMessage = "Title must be 5 characters")]
+        [MinLength(3, ErrorMessage = "Title must be 3 characters")]
         [MaxLength(280, ErrorMessage = "Title can not be over 280 characters")]
         public string Title { get; set; } = string.Empty;
         [Required]

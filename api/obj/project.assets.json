@@ -4626,11 +4626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\mrkie\\Desktop\\FinShark\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\mrkie\\Desktop\\FinShark\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "c:\\Users\\mrkie\\Desktop\\FinShark\\api\\api.csproj",
+      "projectPath": "C:\\Users\\mrkie\\Desktop\\FinShark\\api\\api.csproj",
       "packagesPath": "C:\\Users\\mrkie\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\mrkie\\Desktop\\FinShark\\api\\obj\\",
+      "outputPath": "C:\\Users\\mrkie\\Desktop\\FinShark\\api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4645,7 +4645,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4721,7 +4721,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
