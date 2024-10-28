@@ -60,10 +60,17 @@ namespace api.Repository
                 stocks = stocks = stocks.Where(s => s.Symbol.Contains(query.Symbol));
             }
 
-            //stocks = (!string.IsNullOrWhiteSpace(query.CompanyName)) ? stocks.Where(s => s.CompanyName.Contains(query.CompanyName))
-            //: stocks = stocks.Where(s => s.Symbol.Contains(query.Symbol ?? ""));
+            if (!string.IsNullOrWhiteSpace(query.SortBy))
+            {
+                if (query.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))
+                {
+                    stocks = query.IsDecsending ? stocks.OrderByDescending(s => s.Symbol) : stocks.OrderBy(s => s.Symbol);
+                }
+            }
 
-            return await stocks.ToListAsync();
+            var skipNumber = query.PageNumber * query.PageSize; //Might need to change it to query.PageNumber -1
+
+            return await stocks.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
         public Task<bool> StockExists(int id)
