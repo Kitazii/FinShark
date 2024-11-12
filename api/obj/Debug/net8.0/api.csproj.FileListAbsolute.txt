@@ -140,6 +140,8 @@ C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\api.pdb
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Humanizer.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -152,7 +154,13 @@ C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCo
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -165,6 +173,8 @@ C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -268,7 +278,3 @@ C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\refint\api.dll
 C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\api.pdb
 C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\ref\api.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

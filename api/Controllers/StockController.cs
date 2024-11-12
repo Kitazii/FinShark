@@ -5,6 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Stock;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using api.Models;
@@ -21,9 +22,11 @@ namespace api.Controllers
         public StockController(IStockRepository stockRepo) { _stockRepo = stockRepo; }
 
         [HttpGet]
-        public async Task<IActionResult> GetStocks()
+        public async Task<IActionResult> GetStocks([FromQuery] QueryObject query)
         {
-            var stocks = await _stockRepo.GetStocksAsync();
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var stocks = await _stockRepo.GetStocksAsync(query);
             var stocksDto = stocks.Select(s => s.ToStockDto());
 
             return Ok(stocks);

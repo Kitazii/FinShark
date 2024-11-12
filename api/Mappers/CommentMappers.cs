@@ -30,12 +30,13 @@ namespace api.Mappers
                 StockId = stockId
             };
         }
-        public static void UpdateFromDto(this Comment comment, UpdateCommentRequestDto updateDto)
+        public static Comment ToCommentFromUpdateDto(this UpdateCommentRequestDto commentDto)
         {
-            comment.Title = updateDto.Title;
-            comment.Content = updateDto.Content;
-            comment.CreatedOn = updateDto.CreatedOn;
-            comment.StockId = updateDto.StockId;
+            return new Comment
+            {
+                Title = commentDto.Title,
+                Content = commentDto.Content
+            };
         }
     }
 }
