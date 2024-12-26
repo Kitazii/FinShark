@@ -25,7 +25,7 @@ namespace api.Service
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Email, user.Email ?? "Is Empty"),
-                new Claim(JwtRegisteredClaimNames.Email, user.UserName ?? "Is Empty")
+                new Claim(JwtRegisteredClaimNames.GivenName, user.UserName ?? "Is Empty")
             }; //created are claims
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature); //form of encryption
