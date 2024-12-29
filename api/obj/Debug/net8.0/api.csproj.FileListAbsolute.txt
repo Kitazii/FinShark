@@ -140,6 +140,10 @@ C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\api.pdb
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Humanizer.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
@@ -158,6 +162,8 @@ C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Cachin
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
@@ -178,6 +184,7 @@ C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -278,10 +285,3 @@ C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\refint\api.dll
 C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\api.pdb
 C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\mrkie\Desktop\FinShark\api\obj\Debug\net8.0\ref\api.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\mrkie\Desktop\FinShark\api\bin\Debug\net8.0\System.ClientModel.dll
