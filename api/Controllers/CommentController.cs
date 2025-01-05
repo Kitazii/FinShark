@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos.Comment;
 using api.Extensions;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -32,9 +34,10 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetComments()
+        [Authorize]
+        public async Task<IActionResult> GetComments([FromQuery]CommentQueryObject queryObject)
         {
-            var commentsModel = await _commentRepo.GetCommentsAsync();
+            var commentsModel = await _commentRepo.GetCommentsAsync(queryObject);
             var CommentsDto = commentsModel.Select(s => s.ToCommentDto());
 
             return Ok(commentsModel);
@@ -82,7 +85,7 @@ namespace api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateComment([FromRoute] int id, [FromBody] UpdateCommentRequestDto commentDto)
         {
-            Comment? commentModel = await _commentRepo.UpdateCommentAsync(id, commentDto.ToCommentFromUpdateDto());
+            Comment? commentModel = await _commentRepo.UpdateCommentAsync(id, commentDto.ToCommentFromUpdateDto(id));
 
             if (commentModel == null) return NotFound("Comment Not Found");
 

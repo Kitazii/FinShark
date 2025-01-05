@@ -9,6 +9,7 @@ using api.Models;
 using api.Mappers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using api.Helpers;
 
 namespace api.Repository
 {
@@ -47,9 +48,21 @@ namespace api.Repository
             return await _context.Comments.Include(c => c.AppUser).FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<List<Comment>> GetCommentsAsync()
+        public async Task<List<Comment>> GetCommentsAsync(CommentQueryObject queryObject)
         {
-            return await _context.Comments.Include(c => c.AppUser).ToListAsync();
+            var comments = _context.Comments.Include(c => c.AppUser).AsQueryable();
+            
+            if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
+            {
+                comments = comments.Where(c => c.Stock.Symbol == queryObject.Symbol);
+            }
+
+            if (queryObject.IsDescending == true)
+            {
+                comments = comments.OrderByDescending(c => c.CreatedOn);
+            }
+
+            return await comments.ToListAsync();
         }
 
         public async Task<Comment?> UpdateCommentAsync(int id, Comment commentModel)
