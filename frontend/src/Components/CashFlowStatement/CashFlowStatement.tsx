@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getCashFlowStatement } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Spinner/Spinner";
-import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormating";
+import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormatting";
 
 interface Props {}
 

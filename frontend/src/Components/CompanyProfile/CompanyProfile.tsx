@@ -7,7 +7,7 @@ import Spinner from "../Spinner/Spinner";
 import {
   formatLargeNonMonetaryNumber,
   formatRatio,
-} from "../../Helpers/NumberFormating";
+} from "../../Helpers/NumberFormatting";
 
 interface Props {}
 

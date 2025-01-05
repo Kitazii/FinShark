@@ -11,7 +11,6 @@ import TenKFinder from "../../Components/TenKFinder/TenKFinder";
 interface Props {}
 
 const CompanyPage = (props: Props) => {
-  //https:localhost:3000
   let { ticker } = useParams();
   const [company, setCompany] = useState<CompanyProfile>();
 
