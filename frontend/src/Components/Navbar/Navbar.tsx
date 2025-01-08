@@ -22,12 +22,9 @@ const Navbar = (props: Props) => {
           <Link to="/login" className="hover:text-darkBlue" >
            Login
           </Link>
-          <a
-            href=""
-            className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
-          >
-            Signup
-          </a>
+          <Link to="/register" className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70" >
+           Signup
+          </Link>
         </div>
       </div>
     </nav>

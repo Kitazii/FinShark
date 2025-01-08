@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.Dtos.Account;
 using api.Interfaces;
 using api.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -57,7 +58,7 @@ namespace api.Controllers
                 var appUser = new AppUser
                 {
                     UserName = registerDto.Username,
-                    Email = registerDto.EmailAddress
+                    Email = registerDto.Email
                 };
 
                 var createdUser = await _userManager.CreateAsync(appUser, registerDto.Password);
