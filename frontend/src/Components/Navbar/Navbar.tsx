@@ -1,10 +1,12 @@
 import React from "react";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/useAuth";
 
 interface Props {}
 
 const Navbar = (props: Props) => {
+  const { isLoggedIn, user, logout } = useAuth();
   return (
     <nav className="relative container mx-auto p-6">
       <div className="flex items-center justify-between">
@@ -18,14 +20,23 @@ const Navbar = (props: Props) => {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:flex items-center space-x-6 text-back">
+        {isLoggedIn() ? (
+          <div className="hidden lg:flex items-center space-x-6 text-back">
+          <div className="hover:text-darkBlue" >
+           {user?.username} is logged in.
+          </div>
+          <Link onClick={logout} to="/" className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70" >
+           Logout
+          </Link>
+        </div> 
+        ) : (<div className="hidden lg:flex items-center space-x-6 text-back">
           <Link to="/login" className="hover:text-darkBlue" >
            Login
           </Link>
           <Link to="/register" className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70" >
            Signup
           </Link>
-        </div>
+        </div>)}
       </div>
     </nav>
   );
